@@ -1,0 +1,15 @@
+.vote-toolbar {
+    margin: 0px 6px;
+    padding: 6px 0px 6px;
+    border-bottom: 1px dashed #dedede;
+    text-align: center;
+    position: relative;
+}
+.vote-toolbar .btn {
+    width: 250px;
+    height: 40px;
+    border-radius: 0;
+    margin: 0 3px;
+}
+.vote-toolbar .btn + .vote-toolbar .btn {
+}

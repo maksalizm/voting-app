@@ -1,0 +1,18 @@
+.list-group-item > .btn {
+    float: right;
+}
+.vote-list-group-item {
+    border: none;
+
+}
+
+.vote-list-group-item:hover {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15)
+}
+.vote-input {
+    width: 320px;
+    padding: 4px 8px;
+    border: none;
+    font-size: 24px;
+    outline: none;
+}
