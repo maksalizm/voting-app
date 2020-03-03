@@ -1,0 +1,10 @@
+.chat-content {
+    position: relative;
+    height: 100%;
+    padding: 10px 15px;
+}
+.chat-content > p {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #53535f;
+}

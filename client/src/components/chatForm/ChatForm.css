@@ -1,0 +1,34 @@
+.chat-form {
+    position: absolute;
+    width: 320px;
+    height: 200px;
+    left: 15px;
+    bottom: 15px;
+}
+
+.chat-textarea {
+    width: 100%;
+    margin-bottom: 6px;
+    padding: 4px 6px;
+    background-color: #eee;
+    border: 2px solid #eee;
+    font-size: 12px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    resize: none;
+    appearance: none;
+    background-clip: padding-box;
+    overflow-wrap:break-word;
+    white-space:pre-wrap;
+    outline: none;
+}
+.chat-textarea:focus {
+    background-color: #ffffff;
+    border-color: blue;
+}
+
+.chat-form .btn-primary {
+    float: right;
+    font-size: 12px;
+    padding: 6px 10px;
+}

@@ -1,0 +1,17 @@
+.chat-list-item {
+    border: none;
+    padding: 0 0 6px;
+    font-size: 12px;
+}
+.chat-list-item > p {
+    margin:0;
+}
+.user-name {
+    margin-right: 4px;
+}
+
+.content {
+    margin-left: 4px;
+    word-wrap: break-word;
+    vertical-align: middle;
+}

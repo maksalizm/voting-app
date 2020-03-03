@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
+import './utilities.css';
+
 const ProgressBar = ({done}) => {
     const [style, setStyle] = useState({});
 
@@ -12,8 +14,8 @@ const ProgressBar = ({done}) => {
         setStyle(newStyle);
     },[done]);
     return (
-        <div className="progress">
-            <div className="progress-done" style={style}>
+        <div className="progressbar">
+            <div className="progressbar-done" style={style}>
             </div>
         </div>
     );

@@ -6,7 +6,7 @@ import VoteItemForm from '../voteItem/VoteItemForm';
 
 
 export default function VoteList() {
-    const {  votes } = useContext(VoteContext);
+    const {  votes, startVoting } = useContext(VoteContext);
     let cnt = 1;
 
     useEffect(()=> {
@@ -19,7 +19,7 @@ export default function VoteList() {
                 votes.map(vote => { return <VoteItem vote={vote} count={cnt++} key={vote.id}/>})
             }
             {
-                <VoteItemForm count={cnt++} />
+                !startVoting && <VoteItemForm count={cnt++} />
             }
         </ul>
     )
