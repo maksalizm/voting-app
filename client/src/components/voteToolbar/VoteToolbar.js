@@ -1,13 +1,25 @@
-import React from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import './VoteToolbar.css';
+import {VoteContext} from '../../contexts/VoteContext';
 
 export default function VoteToolbar() {
+    const {startVoting, toggleStartVoting} = useContext(VoteContext);
+    const [activeVoting, setActiveVoting] = useState(startVoting);
+
+    const handleClick = () => {
+        setActiveVoting(!activeVoting);
+        toggleStartVoting();
+    };
+
     return (
         <div className="vote-toolbar">
-            <button className="btn btn-primary">
+            <button className={`btn btn-primary ${activeVoting ? "disabled" :""}`}
+                    onClick={handleClick}
+                    disabled={activeVoting}>
                 시작
             </button>
-            <button className="btn btn-secondary">
+            <button className={`btn btn-secondary ${activeVoting ? "" : "disabled"}`}
+                    disabled={!activeVoting}>
                 마감
             </button>
         </div>

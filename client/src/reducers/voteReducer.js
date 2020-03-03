@@ -2,12 +2,11 @@ import React from 'react';
 import { v1 as uuidv1 } from 'uuid';
 import update from 'immutability-helper';
 
-import {ADD_VOTE, DELETE_VOTE, EDIT_VOTE} from '../components/actionTypes/VoteActionType';
+import {ADD_VOTE, DELETE_VOTE, EDIT_VOTE} from '../actionTypes/VoteActionType';
 
 const VoteReducer = (state, action) => {
     switch (action.type) {
         case ADD_VOTE:
-            console.log(action);
             return [...state, {
                 id: uuidv1(),
                 title: action.vote.title

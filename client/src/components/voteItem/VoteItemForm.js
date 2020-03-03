@@ -1,12 +1,11 @@
 import React, {useContext, useState} from 'react';
 import {VoteContext} from '../../contexts/VoteContext';
-import {ADD_VOTE, EDIT_VOTE} from '../actionTypes/VoteActionType';
+import {ADD_VOTE, EDIT_VOTE} from '../../actionTypes/VoteActionType';
 
 const VoteItemForm = (props) => {
     const {dispatch} = useContext(VoteContext);
     const {vote ,type} = props;
     const [title, setTitle] = useState(vote && vote.title || '');
-    const [isActive, setIsActive] = useState(false);
     const handleSubmit = (e) => {
         e.preventDefault();
         if(!title) {

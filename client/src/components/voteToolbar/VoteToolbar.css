@@ -13,3 +13,7 @@
 }
 .vote-toolbar .btn + .vote-toolbar .btn {
 }
+
+.btn.disabled:hover {
+    cursor: not-allowed;
+}
