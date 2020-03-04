@@ -5,7 +5,7 @@ import {ADD_VOTE, EDIT_VOTE} from '../../actionTypes/VoteActionType';
 const VoteItemForm = (props) => {
     const {dispatch} = useContext(VoteContext);
     const {vote ,type} = props;
-    const [title, setTitle] = useState(vote && vote.title || '');
+    const [title, setTitle] = useState((vote && vote.title )|| '');
     const handleSubmit = (e) => {
         e.preventDefault();
         if(!title) {

@@ -1,4 +1,4 @@
-import {SEND_CHAT, VOTE} from '../actionTypes/ChatActionType';
+import {SEND_CHAT} from '../actionTypes/ChatActionType';
 import {v1 as uuidv1} from 'uuid';
 
 const ChatReducer = (state, action) => {

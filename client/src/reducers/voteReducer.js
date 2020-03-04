@@ -1,5 +1,6 @@
 import { v1 as uuidv1 } from 'uuid';
 
+
 import {ADD_VOTE, DELETE_VOTE, EDIT_VOTE} from '../actionTypes/VoteActionType';
 import {VOTE} from '../actionTypes/ChatActionType';
 
@@ -14,11 +15,14 @@ const VoteReducer = (state, action) => {
         case DELETE_VOTE:
             return state.filter((vote) => vote.id !== action.vote.id);
         case EDIT_VOTE:
-            return state.filter((vote) => {
-                if(vote.id === action.vote.id){
-                    vote.title = action.vote.title;
+            return state.map((vote) => {
+                if(vote.id !== action.vote.id){
+                    return vote;
                 }
-                return true;
+                return {
+                    ...vote,
+                    title: action.vote.title,
+                }
             });
         case VOTE:
             return state.filter((vote,idx) => {

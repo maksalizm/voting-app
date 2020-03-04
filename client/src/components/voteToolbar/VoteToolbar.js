@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext, useState} from 'react';
 import './VoteToolbar.css';
 import {VoteContext} from '../../contexts/VoteContext';
 
@@ -19,7 +19,7 @@ export default function VoteToolbar() {
                 시작
             </button>
             <button className={`btn btn-secondary ${activeVoting ? "" : "disabled"}`}
-                    onClick = {e => toggleEndVote()}
+                    onClick = {() => toggleEndVote()}
                     disabled={!activeVoting}>
                 마감
             </button>
