@@ -3,7 +3,7 @@ import './VoteToolbar.css';
 import {VoteContext} from '../../contexts/VoteContext';
 
 export default function VoteToolbar() {
-    const {startVoting, toggleStartVoting} = useContext(VoteContext);
+    const {startVoting, toggleStartVoting, toggleEndVote} = useContext(VoteContext);
     const [activeVoting, setActiveVoting] = useState(startVoting);
 
     const handleClick = () => {
@@ -19,6 +19,7 @@ export default function VoteToolbar() {
                 시작
             </button>
             <button className={`btn btn-secondary ${activeVoting ? "" : "disabled"}`}
+                    onClick = {e => toggleEndVote()}
                     disabled={!activeVoting}>
                 마감
             </button>

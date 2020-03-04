@@ -7,6 +7,8 @@ const VoteContextProvider = (props) => {
     const [votes, dispatch] = useReducer(voteReducer, []);
     const [activeVoteId, setActiveVote] = useState('');
     const [startVoting, setStartVoting] = useState(false);
+    const [totalVotes, setTotalVotes] = useState(0);
+    const [endVote, setEndVote] = useState(false);
 
     const activeVote = (id) => {
         setActiveVote(id);
@@ -17,8 +19,19 @@ const VoteContextProvider = (props) => {
         fn && fn();
     };
 
+    const toggleEndVote = () => {
+        setEndVote(!endVote);
+    };
+
+    const voteContextState = {
+        votes, dispatch, activeVoteId,
+        activeVote, toggleStartVoting, startVoting,
+        totalVotes, setTotalVotes, toggleEndVote,
+        endVote,
+    };
+
     return (
-        <VoteContext.Provider value={{votes, dispatch, activeVoteId, activeVote, toggleStartVoting, startVoting}}>
+        <VoteContext.Provider value={voteContextState}>
             {props.children}
         </VoteContext.Provider>
     );

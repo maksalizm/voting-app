@@ -9,7 +9,7 @@ const ChatList = () => {
 
     return (
         <ul className="list-group chat-list">
-            {chat.map(chat => <ChatListItem chat={chat}/>)}
+            {chat.map(chat => <ChatListItem chat={chat} key={chat.id}/>)}
         </ul>
     );
 };

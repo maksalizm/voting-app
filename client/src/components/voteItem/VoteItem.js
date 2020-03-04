@@ -11,9 +11,9 @@ import ProgressBar from '../utilities/ProgressBar';
 export default function VoteItem(props) {
     const {vote} = props;
     const [title, setTitle] = useState(props.vote.title);
-    const {dispatch, activeVote, activeVoteId, startVoting} = useContext(VoteContext);
+    const {dispatch, activeVote, activeVoteId, startVoting, totalVotes} = useContext(VoteContext);
     const handleClick = (e) => {
-        activeVote(vote.id);
+        !startVoting && activeVote(vote.id);
     };
     useEffect(()=> {
         setTitle(vote.title);
@@ -32,7 +32,16 @@ export default function VoteItem(props) {
                 <span className="vote-list-count">{props.count}</span>
                 {title}
                 {startVoting ? (
-                    <ProgressBar done={0} />) :
+                    <>
+                        <ProgressBar done={Math.floor(totalVotes && vote.count/totalVotes * 100)}/>
+                        <div className="vote">
+                            {vote.count}명
+                        </div>
+                        <div className="percent">
+                            {Math.floor(totalVotes && vote.count/totalVotes * 100)}%
+                        </div>
+                    </>
+                    ) :
                     (<FontAwesomeIcon
                     onClick={(e) => dispatch({type: DELETE_VOTE, vote: {id: vote.id}})}
                     icon={faTimes} size="xs" className="vote-delete-icon" color="red" pull="right"/>)}
